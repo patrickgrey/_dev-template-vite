@@ -1,0 +1,38 @@
+{
+  "name": "dev-template-11ty-vite",
+  "version": "1.0.0",
+  "description": "Design HTML files for divital CV project.",
+  "scripts": {
+    "del": "del-cli _website-publish",
+    "serve": "npx @11ty/eleventy --serve --incremental",
+    "dev": "run-s del serve",
+    "build:11ty": "npx @11ty/eleventy",
+    "build:vite": "node _utilities/vite-build.mjs",
+    "build": "run-s del build:11ty build:vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/patrickgrey/rs-11ty-skeleton.git"
+  },
+  "author": {
+    "name": "Patrick Grey",
+    "email": "patrick.grey.ext@eurocontrol.int",
+    "url": "https://risingsky.co.uk/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickgrey/rs-11ty-skeleton/issues"
+  },
+  "homepage": "https://github.com/patrickgrey/rs-11ty-skeleton#readme",
+  "dependencies": {
+    "@bamblehorse/tiny": "^2.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.15",
+    "@11ty/eleventy-plugin-vite": "^2.0.0-canary.2",
+    "del-cli": "^5.0.0",
+    "fast-glob": "^3.2.12",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.9"
+  }
+}
