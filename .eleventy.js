@@ -9,6 +9,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_website-source/**/*.scss");
   // }
 
+
+  // https://vueschool.io/articles/vuejs-tutorials/import-aliases-in-vite/
+  // https://vitejs.dev/config/shared-options.html#resolve-alias - this doesn't seem to work
+
+  // Maybe look at reinstating shared link for dev and manipulating
+  // shared on esbuild?
+  // Alternative is to use a filter or shortcode? Can't use in js/css
   if (process.env.NODE_ENV === "development") {
     eleventyConfig.addPlugin(EleventyVitePlugin, {
       tempFolderName: "_website-publish", // Default name of the temp folder

@@ -6,9 +6,10 @@
     "del": "del-cli _website-publish",
     "serve": "npx @11ty/eleventy --serve --incremental",
     "dev": "run-s del serve",
+    "vite": "vite",
+    "viteBuild": "run-s del vite build",
     "build:11ty": "npx @11ty/eleventy",
     "build:esbuild": "node _utilities/build.mjs",
-    "build:vite": "vite build",
     "build": "run-s del build:11ty build:esbuild"
   },
   "repository": {
@@ -33,8 +34,10 @@
     "@11ty/eleventy-plugin-vite": "^2.0.0-canary.2",
     "del-cli": "^5.0.0",
     "esbuild": "^0.15.8",
+    "esbuild-sass-plugin": "^2.3.2",
     "fast-glob": "^3.2.12",
     "npm-run-all": "^4.1.5",
+    "vite": "^3.1.3",
     "sass": "^1.54.9"
   }
 }

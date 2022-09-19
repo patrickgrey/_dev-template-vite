@@ -29,7 +29,7 @@ entries:  [
 import * as fs from 'fs';
 import glob from "fast-glob";
 
-fs.mkdirSync("_webiste-vite");
+fs.mkdirSync("_website-vite");
 
 let entryPoints = glob.sync(`_website-publish/**/*.html`);
 
