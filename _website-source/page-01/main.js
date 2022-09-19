@@ -1,5 +1,5 @@
 import tiny from "@bamblehorse/tiny";
-import { local } from "/shared/js/local";
+import { local } from "js/local";
 
 console.log("tiny:", tiny("Tiny test string init!"));
 local();

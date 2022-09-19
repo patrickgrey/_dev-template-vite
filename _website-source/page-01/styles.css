@@ -1,6 +1,6 @@
-@import "/shared/css/import.css";
-@import "/shared/css/guide.css";
-@import "/shared/css/shared.css";
+@import "css/import.css";
+@import "css/guide.css";
+@import "css/shared.css";
 /* @import "@bamblehorse/tiny/index"; */
 
 .style {

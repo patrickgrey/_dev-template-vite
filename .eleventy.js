@@ -3,9 +3,11 @@ const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
   // Copy the `img` and `css` folders to the output
+  // if (process.env.NODE_ENV === "development") {
   eleventyConfig.addPassthroughCopy("_website-source/**/*.js");
   eleventyConfig.addPassthroughCopy("_website-source/**/*.css");
   eleventyConfig.addPassthroughCopy("_website-source/**/*.scss");
+  // }
 
   if (process.env.NODE_ENV === "development") {
     eleventyConfig.addPlugin(EleventyVitePlugin, {
