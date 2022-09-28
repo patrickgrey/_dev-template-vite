@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contents</title>
-    {# <link rel="stylesheet" href="styles.css"> #}
-  </head>
-  <body>
-    <h1>Contents</h1>
-    <p class="shared">Shared test</p>
-    <p class="guide">Guide test</p>
-    <ul>
-      <li>
-        <a href="/page-01/">page-01</a>
-      </li>
-      <li>
-        <a href="/page-01/index_fr/">page-01-fr</a>
-      </li>
-      {# <li>
-        <a href="/topic-01/page-01/">topic-01/page-01</a>
-      </li>
-      <li>
-        <a href="/topic-01/page-01/index_fr/">topic-01/page-01-fr</a>
-      </li> #}
-    </ul>
-    <ul>
-      <li>Need to include node_module js and css</li>
-      <li>SASS</li>
-      <li>Build</li>
-      <li>https://stackoverflow.com/questions/70042979/why-does-javascript-vite-js-multi-page-app-fail-on-build</li>
-    </ul>
-    {# <script type="module" defer src="main.js"></script> #}
-  </body>
-</html>
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+{% set maxPosts = collections.posts.length | min(3) %}
+<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}
+</h1>
+
+{% set postslist = collections.posts | head(-3) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "postslist.njk" %}
+
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+
+<ul>
+  <li>I have node import working</li>
+  <li>New versions of 11ty work with copy pass setting</li>
+  <li>TODO</li>
+  <ul>
+    <li>Next step is to clean structure to reflect what I want</li>
+    <li>CSS process and import  - done for dev</li>
+    <li>SASS - done for dev</li>
+  </ul>
+</ul>
+
+<script type="module" defer src="./main.js"></script>
