@@ -27,11 +27,9 @@
   },
   "homepage": "https://github.com/patrickgrey/rs-11ty-skeleton#readme",
   "dependencies": {
-    "@bamblehorse/tiny": "^2.0.0"
-  },
-  "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.15",
     "@11ty/eleventy-plugin-vite": "^2.0.0-canary.2",
+    "@bamblehorse/tiny": "^2.0.0",
     "del-cli": "^5.0.0",
     "esbuild": "^0.15.8",
     "esbuild-sass-plugin": "^2.3.2",

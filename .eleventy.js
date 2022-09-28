@@ -18,7 +18,11 @@ module.exports = function (eleventyConfig) {
   // Alternative is to use a filter or shortcode? Can't use in js/css
   if (process.env.NODE_ENV === "development") {
     eleventyConfig.addPlugin(EleventyVitePlugin, {
-      tempFolderName: "_website-publish", // Default name of the temp folder
+      // tempFolderName: "_website-publish", // Default name of the temp folder
+      viteOptions: {
+        // root: '_website-publish',
+        publicDir: '_website-publish',
+      }
     });
   }
 
