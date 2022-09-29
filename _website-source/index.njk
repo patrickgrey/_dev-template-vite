@@ -4,24 +4,16 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-{% set maxPosts = collections.posts.length | min(3) %}
-<h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}
-</h1>
-
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
-
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
 
 <ul>
   <li>I have node import working</li>
   <li>New versions of 11ty work with copy pass setting</li>
   <li>TODO</li>
   <ul>
-    <li>Next step is to clean structure to reflect what I want</li>
     <li>CSS process and import  - done for dev</li>
     <li>SASS - done for dev</li>
+    <li>Next step is to clean structure to reflect what I want</li>
+    <li>Check still working in the other folder</li>
   </ul>
 </ul>
 

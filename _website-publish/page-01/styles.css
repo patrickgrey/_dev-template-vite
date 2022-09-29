@@ -1,0 +1,8 @@
+@import "/shared/css/import.css";
+@import "/shared/css/guide.css";
+@import "/shared/css/shared.css";
+@import "normalize.css/normalize.css";
+
+.style {
+  background-color: red;
+}
