@@ -11,7 +11,7 @@ import { sassPlugin } from "esbuild-sass-plugin";
     allowOverwrite: true,
     bundle: true,
     entryPoints,
-    minify: true,
+    minify: false,
     nodePaths: [`_website-publish/shared`],
     outdir: `_website-publish`,
     plugins: [sassPlugin()]

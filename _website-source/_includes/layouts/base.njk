@@ -23,7 +23,7 @@ cssFiles: ["./styles.css"]
     {% endif %}
 
     {% for file in cssFiles %}
-      <link rel="stylesheet" href={{file | sasstocss}}>
+      <link rel="stylesheet" href="{{file | sasstocss}}">
     {% endfor %}
   </head>
   <body>
@@ -35,7 +35,7 @@ cssFiles: ["./styles.css"]
     <footer>&copy; EUROCONTROL</footer>
 
     {% for file in jsFiles %}
-      <script type="module" defer src={{file}}></script>
+      <script type="module" defer src="{{file}}"></script>
     {% endfor %}
 
   </body>

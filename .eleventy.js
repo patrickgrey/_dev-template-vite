@@ -10,9 +10,11 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.addPassthroughCopy("_website-source/img");
 
   // Add plugins
-  eleventyConfig.addPlugin(EleventyVitePlugin, {
-    tempFolderName: "_website-publish", // Default name of the temp folder
-  });
+  if (process.env.DEV_ENVIRONMENT === "dev") {
+    eleventyConfig.addPlugin(EleventyVitePlugin, {
+      tempFolderName: "_website-publish", // Default name of the temp folder
+    });
+  }
 
   // Add filters
   eleventyConfig.addFilter("cssmin", function (code) {
