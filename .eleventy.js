@@ -4,15 +4,15 @@ const CleanCSS = require("clean-css");
 module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
   // Copy the `img` and `css` folders to the output
-  eleventyConfig.addPassthroughCopy("_website-source/**/*.js");
-  eleventyConfig.addPassthroughCopy("_website-source/**/*.css");
-  eleventyConfig.addPassthroughCopy("_website-source/**/*.scss");
-  // eleventyConfig.addPassthroughCopy("_website-source/img");
+  eleventyConfig.addPassthroughCopy("website-source/**/*.js");
+  eleventyConfig.addPassthroughCopy("website-source/**/*.css");
+  eleventyConfig.addPassthroughCopy("website-source/**/*.scss");
+  // eleventyConfig.addPassthroughCopy("website-source/img");
 
   // Add plugins
   if (process.env.DEV_ENVIRONMENT === "dev") {
     eleventyConfig.addPlugin(EleventyVitePlugin, {
-      tempFolderName: "_website-publish", // Default name of the temp folder
+      tempFolderName: "website-publish", // Default name of the temp folder
     });
   }
 
@@ -57,8 +57,8 @@ module.exports = function (eleventyConfig) {
 
     // These are all optional (defaults are shown):
     dir: {
-      input: "_website-source",
-      output: "_website-publish"
+      input: "website-source",
+      output: "website-publish"
     }
   };
 };

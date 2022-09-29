@@ -3,7 +3,7 @@
   "version": "6.0.0",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
   "scripts": {
-    "del": "del-cli _website-publish",
+    "del": "del-cli website-publish",
     "serve": "cross-env DEV_ENVIRONMENT=dev npx @11ty/eleventy --serve --incremental",
     "dev": "run-s del serve",
     "build:11ty": "cross-env DEV_ENVIRONMENT=prod npx @11ty/eleventy",
