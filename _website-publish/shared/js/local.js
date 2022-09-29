@@ -1,3 +1,6 @@
-export function local() {
-  console.log("Local loaded!!!");
-}
+(() => {
+  // _website-publish/shared/js/local.js
+  function local() {
+    console.log("Local loaded!!!");
+  }
+})();
