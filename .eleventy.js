@@ -14,12 +14,11 @@ module.exports = function (eleventyConfig) {
     tempFolderName: "_website-publish", // Default name of the temp folder
   });
 
-  console.log("process.env.DEV_ENVIRONMENT:", process.env.DEV_ENVIRONMENT);
-
+  // Add filters
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
-
+  // Change links to sass files in template to css on build
   eleventyConfig.addFilter("sasstocss", function (code) {
     return (process.env.DEV_ENVIRONMENT != "dev") ? code.replace(".scss", ".css") : code;
   });
