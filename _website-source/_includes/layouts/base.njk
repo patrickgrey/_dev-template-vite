@@ -1,28 +1,42 @@
+---
+jsFiles: ["./main.js"]
+cssFiles: ["./styles.css"]
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
+    <title>{{ title  }}</title>
+    {% set css %}
+    {% include "../../shared/css/guide.css" %}
+    {% include "../../shared/css/shared.css" %}
+    {% endset %}
+
+    {% if devEnvironment.environment === 'dev' %}
+      <link rel="stylesheet" href="/shared/css/guide.css">
+      <link rel="stylesheet" href="/shared/css/shared.css">
+    {% else %}
+      <style>
+        {{css | cssmin | safe}}
+      </style>
+    {% endif %}
+
+    {% for file in cssFiles %}
+      <link rel="stylesheet" href={{file | sasstocss}}>
+    {% endfor %}
   </head>
   <body>
-    <header>
-      <h1 class="home">
-        <a href="{{ '/' | url }}">{{ metadata.title }}</a>
-      </h1>
-
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-
-    </header>
 
     <main>
-
       {{ content | safe }}
     </main>
 
-    <footer></footer>
-    {# <script type="module" defer src="main.js"></script> #}
-    <!-- Current page: {{ page.url | url }} -->
+    <footer>&copy; EUROCONTROL</footer>
+
+    {% for file in jsFiles %}
+      <script type="module" defer src={{file}}></script>
+    {% endfor %}
+
   </body>
 </html>

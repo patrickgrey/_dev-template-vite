@@ -1,4 +1,5 @@
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
+const CleanCSS = require("clean-css");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
@@ -11,6 +12,16 @@ module.exports = function (eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     tempFolderName: "_website-publish", // Default name of the temp folder
+  });
+
+  console.log("process.env.DEV_ENVIRONMENT:", process.env.DEV_ENVIRONMENT);
+
+  eleventyConfig.addFilter("cssmin", function (code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
+
+  eleventyConfig.addFilter("sasstocss", function (code) {
+    return (process.env.DEV_ENVIRONMENT != "dev") ? code.replace(".scss", ".css") : code;
   });
 
   return {
