@@ -1,0 +1,85 @@
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  /* background-color: #eee; */
+  font-size: 1.25rem;
+  color: #05a;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  background-color: transparent;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+.ians-contents-level-2 {
+  margin-left: 0rem;
+}
+
+h3,
+.ians-contents-level-3 {
+  margin-left: 2rem;
+}
+
+h4,
+.ians-contents-level-4 {
+  margin-left: 4rem;
+}
+
+h5,
+.ians-contents-level-5 {
+  margin-left: 6rem;
+}
+
+h6,
+.ians-contents-level-6 {
+  margin-left: 8rem;
+}
+
+/* .ians-content-level-root {
+	margin-top: 2rem;
+} */
+
+a::before {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-code"  viewBox="0 0 24 24" stroke-width="1.5" stroke="rgb(41,144,234)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M10 13l-1 2l1 2" /><path d="M14 13l1 2l-1 2" /></svg>');
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="rgb(0,85,170)"><path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" /></svg>');
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  /* margin-top: 5px; */
+  vertical-align: middle;
+}
+
+hr {
+  border-top: 1px dashed #999;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-code" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgb(41,144,234)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><path d="M10 13l-1 2l1 2" /><path d="M14 13l1 2l-1 2" /></svg> */

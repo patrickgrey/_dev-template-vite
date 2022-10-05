@@ -1,25 +1,18 @@
 ---
 layout: layouts/base.njk
-title: contents
+title: Contents
 jsFiles:
-cssFiles:
+breadcrumb: ["Subject 1", "Topic 2"]
+useDefaultHeader: false
 ---
+<header class="ians-column-wide-1 mt-3">
+  <h1>{{title}}</h1>
+</header>
 
-<h1>{{title}}</h1>
+<main>
+  <div class="ians-column">
 
-<ul>
-  <li>I have node import working</li>
-  <li>New versions of 11ty work with copy pass setting</li>
-  <li>TODO</li>
-  <ul>
-    <li>CSS process and import  - done for dev</li>
-    <li>SASS - done for dev</li>
-    <li>Next step is to clean structure to reflect what I want DONE</li>
-    <li>Topic added DONE</li>
-    <li>Use layout in every page.</li>
-    <li>Check reload works for all files</li>
-    <li>FR page permalink</li>
-    <li>Get rid of vite dependency</li>
-    <a href="/page-01/">Page 01</a>
-  </ul>
-</ul>
+    {{ courseContent.tree | safe }}
+
+  </div>
+</main>

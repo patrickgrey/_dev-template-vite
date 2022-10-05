@@ -1,21 +1,24 @@
 ---
+title: Title
 jsFiles: ["./main.js"]
 cssFiles: ["./styles.css"]
+useDefaultHeader: true
+breadcrumb: []
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title  }}</title>
+    <title>{{ title }}</title>
     {% set css %}
-    {% include "../../shared/css/guide.css" %}
-    {% include "../../shared/css/shared.css" %}
+    {% include "../../_shared/css/guide.css" %}
+    {% include "../../_shared/css/shared.css" %}
     {% endset %}
 
     {% if devEnvironment.environment === 'dev' %}
-      <link rel="stylesheet" href="/shared/css/guide.css">
-      <link rel="stylesheet" href="/shared/css/shared.css">
+      <link rel="stylesheet" href="/_shared/css/guide.css">
+      <link rel="stylesheet" href="/_shared/css/shared.css">
     {% else %}
       <style>
         {{css | cssmin | safe}}
@@ -28,9 +31,23 @@ cssFiles: ["./styles.css"]
   </head>
   <body>
 
-    <main>
+    {% if useDefaultHeader %}
+      <header class="ians-column-wide-1 mt-1">
+        {% if breadcrumb != '' %}
+          <p class="ians-breadcrumb">
+            {% for crumb in breadcrumb %}
+              {{ crumb }} / 
+            {% endfor %}
+          </p>
+        {% endif %}
+        <h1>{{ title }}</h1>
+      </header>
+      <main>
+        {{ content | safe }}
+      </main>
+    {% else %}
       {{ content | safe }}
-    </main>
+    {% endif %}
 
     <footer>&copy; EUROCONTROL</footer>
 
