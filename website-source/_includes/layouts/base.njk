@@ -3,6 +3,7 @@ title: Title
 jsFiles: ["./main.js"]
 cssFiles: ["./styles.css"]
 useDefaultHeader: true
+hideBanner: false
 breadcrumb: []
 ---
 <!doctype html>
@@ -30,6 +31,9 @@ breadcrumb: []
     {% endfor %}
   </head>
   <body>
+    {% if hideBanner === false %}
+      {% lmsBanner %}
+    {% endif %}
 
     {% if useDefaultHeader %}
       <header class="ians-column-wide-1 mt-1">

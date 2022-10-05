@@ -42,6 +42,8 @@
 
   --ians-grid-gaps: 1rem;
   --ians-size-sides-small: 0.5rem;
+  --ians-footer-height: 7rem;
+  --ians-lms-banner-height: 54px;
 }
 
 /* .##....##..#######..########..##.....##.##.......########
@@ -99,7 +101,9 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
+  width: 100%;
+  max-width: 80vh;
+  height: auto;
   display: block;
 }
 
@@ -333,7 +337,10 @@ header {
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc(
+    100vh - var(--ians-lms-banner-height) - var(--ians-footer-height)
+  );
+  /* min-height: calc(100lvh - var(--ians-lms-banner-height)); */
 }
 
 .ians-text-instruction {
@@ -485,7 +492,8 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  padding: var(--size-200) var(--size-50);
+  min-height: var(--ians-footer-height);
+  /* padding: var(--size-200) var(--size-50); */
   color: white;
   background-color: #0f1120;
 }
@@ -637,14 +645,14 @@ div[class^="ians-video"] embed {
   top: 0;
   left: 0;
   background-color: var(--ians-colour-light-blue);
-  height: 54px;
+  height: var(--ians-lms-banner-height);
   overflow: hidden;
 }
 
 .ians-lms-banner a {
   display: block;
-  line-height: 54px;
-  height: 54px;
+  line-height: var(--ians-lms-banner-height);
+  height: var(--ians-lms-banner-height);
   color: white;
   font-weight: bold;
   padding-left: 2rem;

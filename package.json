@@ -8,7 +8,8 @@
     "dev": "run-s del serve",
     "build:11ty": "cross-env DEV_ENVIRONMENT=prod npx @11ty/eleventy",
     "build:esbuild": "node _utilities/build.mjs",
-    "build": "run-s del build:11ty build:esbuild",
+    "build:http-server": "http-server website-publish -c-1",
+    "build": "run-s del build:11ty build:esbuild build:http-server",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
     "debug": "DEBUG=* npx @11ty/eleventy"
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-canary.16",
+    "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-vite": "^2.0.0-canary.2",
     "clean-css": "^5.3.1",
     "cross-env": "^7.0.3",
@@ -38,6 +40,7 @@
     "esbuild-sass-plugin": "^2.3.2",
     "fast-glob": "^3.2.12",
     "gsap": "^3.11.2",
+    "http-server": "^14.1.1",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",
     "sass": "^1.54.9"
