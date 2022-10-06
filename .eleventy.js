@@ -120,7 +120,8 @@ module.exports = function (eleventyConfig) {
     // These are all optional (defaults are shown):
     dir: {
       input: "website-source",
-      output: "website-publish"
+      output: "website-publish",
+      data: "../_utilities/_data",
     }
   };
 };

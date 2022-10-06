@@ -1,5 +1,5 @@
 {
-  "name": "eleventy-base-blog",
+  "name": "dev-template-vite",
   "version": "6.0.0",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
   "scripts": {
