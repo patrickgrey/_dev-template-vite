@@ -5,20 +5,20 @@ const path = require("path");
 
 async function imageShortcode(src, alt, cls, sizes, widths, formats) {
   const imagePath = path.dirname(src);
-  console.log("imagePath:", imagePath);
+  // console.log("imagePath:", imagePath);
   const urlPath = imagePath + "/";
   let pageURL = this.page.url;
-  console.log("pageURL:", pageURL);
+  // console.log("pageURL:", pageURL);
   if (this.page.url.slice(-5) === ".html") {
     // console.log(pageURL.lastIndexOf("/") * -1)
     pageURL = pageURL.slice(0, pageURL.lastIndexOf("/") + 1);
   }
-  console.log("pageURL:", pageURL);
+  // console.log("pageURL:", pageURL);
   const outputDir = "./website-publish" + pageURL + imagePath + "/";
   // BUG if ends with .html, need to remove string back to /
-  console.log("outputDir:", outputDir);
+  // console.log("outputDir:", outputDir);
   const imageSource = "./website-source" + pageURL + src;
-  console.log("imageSource:", imageSource);
+  // console.log("imageSource:", imageSource);
   const sizesString = sizes || `(max-width: 2400px) 100vw, 2400px`;
 
   let metadata = await Image(imageSource, {
