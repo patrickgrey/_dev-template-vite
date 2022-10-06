@@ -46,7 +46,7 @@ let filteredPaths = pathArray.filter(function (path) {
     path === `website-source/_direct-access/index.njk` ||
     path === `website-source/_direct-access/syllabus.njk` ||
     path === `website-source/_direct-access/placeholder.njk` ||
-    path === `website-source/_shared/_styleguide/index.njk` ||
+    path === `website-source/_shared/styleguide.njk` ||
     path === `website-source/_includes/layouts/base.njk` ||
     path === `website-source/index.njk`
   ) {
@@ -134,7 +134,7 @@ function parseData(data) {
 
   // Eh??
 
-  contentsString += `<p><a href="_shared/_styleguide/index.html">styleguide</a></p>`;
+  contentsString += `<p><a href="_shared/styleguide/">styleguide</a></p>`;
 
   // contentsString += `<p class="ians-contents-level-root"><a href="_direct-access/${metaData.courseCode}_DA.html">Direct Access</a></p>`;
 

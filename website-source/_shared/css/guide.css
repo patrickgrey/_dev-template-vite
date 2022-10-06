@@ -37,8 +37,7 @@
 
   --ians-colour-light-blue: #2990ea;
   --ians-colour-dark-blue: #003366;
-  --ians-colour-xdark-blue: #0f1120;
-  --ians-colour-light-grey: #fefefe;
+  --ians-colour-light-grey: #efefef;
 
   --ians-grid-gaps: 1rem;
   --ians-size-sides-small: 0.5rem;
@@ -438,6 +437,8 @@ a:hover {
 }
 
 button {
+  cursor: pointer;
+  background-color: white;
   padding: var(--size-25) var(--size-75);
   color: var(--ians-colour-light-blue);
   border: 1px solid var(--ians-colour-light-blue);
@@ -516,6 +517,10 @@ footer {
 
 /* TEXT */
 
+.ians-text-white {
+  color: white;
+}
+
 .ians-text-light-blue {
   color: var(--ians-colour-light-blue);
 }
@@ -536,7 +541,6 @@ footer {
 
 .ians-bg-dark-blue {
   background-color: var(--ians-colour-dark-blue);
-  color: white;
 }
 
 .ians-bg-light-grey {
@@ -814,4 +818,20 @@ div[class^="ians-video"] embed {
   .ians-welcome-page-title > div p {
     max-width: 40ch;
   }
+}
+
+/* .########.########....###....########.##.....##.########...######.
+/* .##.......##.........##.##......##....##.....##.##.....##.##....##
+/* .##.......##........##...##.....##....##.....##.##.....##.##......
+/* .######...######...##.....##....##....##.....##.########...######.
+/* .##.......##.......#########....##....##.....##.##...##.........##
+/* .##.......##.......##.....##....##....##.....##.##....##..##....##
+/* .##.......########.##.....##....##.....#######..##.....##..######. */
+
+.ians-hero-image {
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 50vmin;
 }

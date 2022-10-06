@@ -1,0 +1,205 @@
+---
+layout: layouts/base.njk
+title: Styleguide
+jsFiles:
+cssFiles:
+---
+
+<div class="ians-column">
+
+  <p>
+  The purpose of these styles is to give a foundation of reusable styles
+  which can be overwritten in order to adjust them where required.
+  </p>
+
+  <h2>Hero image</h2>
+
+  <p>
+    <code>.ians-hero-image</code>
+  </p>
+
+</div>
+
+<div class="mt-2">
+  <img class="ians-hero-image" src="../tree.jpg" alt="Hero image of desert tree">
+</div>
+
+<div class="ians-column">
+
+  <p>
+  This is a standard text column with <a href="#">linky text</a>,
+  <strong>bold</strong> and <em>italics</em>. Multiple paragraphs
+  inclided below to demonstrate vertical flow. All fonts are Roboto with
+  weights 300, <span style="font-weight: 400">400</span> and
+  <strong>700</strong>.
+  </p>
+
+  <blockquote>
+  This is a <strong>blockquote</strong> consectetur adipisicing elit.
+  Nulla delectus id voluptatum repellendus earum. Similique obcaecati
+  nemo earum, perferendis aut eveniet ad sapiente qui recusandae,
+  distinctio nostrum? Reprehenderit, repellat placeat.
+  </blockquote>
+
+  <h2>Headers</h2>
+
+  <h1 class="ians-dib mt-0 mb-0 pr-1">h1</h1>
+  <h2 class="ians-dib mt-0 mb-0 pr-1">h2</h2>
+  <h3 class="ians-dib mt-0 mb-0 pr-1">h3</h3>
+  <h4 class="ians-dib mt-0 mb-0 pr-1">h4</h4>
+
+  <h2>Buttons</h2>
+  <button>This is a button</button>
+
+  <h2>Colours</h2>
+
+</div>
+
+<div class="ians-column-wide-3">
+
+  <div class="ians-grid-3">
+    <p class="p-1 ians-text-white ians-bg-light-blue">
+      <code>--ians-colour-light-blue</code>
+    </p>
+    <p class="p-1 ians-text-white ians-bg-dark-blue">
+      <code>--ians-colour-dark-blue</code>
+    </p>
+    <p class="p-1 ians-bg-light-grey">
+      <code>--ians-colour-light-grey</code>
+    </p>
+  </div>
+
+</div>
+
+<div class="ians-column">
+  <h2>Layouts</h2>
+  <p>
+					Layouts restrict width horizontally and adjust responsively. These are
+					default widths but we are not restricted to them, they can be any
+					width. The default widths speed up development and aid consistency but
+					the ability to have any width means we can adapt to content where
+					needed instead of adapting content to widths.
+				</p>
+</div>
+
+<div class="ians-column-wide-1 ians-bg-light-grey mb-1">
+  <p>
+    <code>.ians-column-wide-1</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-2 ians-bg-light-grey mb-1">
+  <p>
+    <code>.ians-column-wide-2</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-3 ians-bg-light-grey mb-1">
+  <p>
+    <code>.ians-column-wide-3</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-4 ians-bg-light-grey mb-1">
+  <p>
+    <code>.ians-column-wide-4</code>
+  </p>
+</div>
+
+<div class="ians-column-double ians-grid-2 ians-bg-dark-blue ians-text-white mt-3">
+  <div class=" p-1 ">
+    <p>This is a double column layout: <code>.ians-column-double</code>
+    </p>
+    <p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+							voluptas officiis quisquam sapiente accusantium cumque, unde
+							doloribus ipsam numquam quod natus id veritatis sed porro esse
+							repellat ut facilis. Omnis!
+						</p>
+
+  </div>
+  <div class=" p-1 ">
+    <p>
+							Lots of people are experiencing either redundancies or work issues
+							at the moment and although, at the time of writing, we are in a
+							global pandemic: now is a great time to go freelance.
+						</p>
+    <p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+							fugit fuga quasi. Ea aliquid, itaque mollitia, natus eos a soluta
+							hic totam inventore repellat labore voluptatibus nisi omnis
+							repellendus deleniti.
+						</p>
+
+  </div>
+</div>
+
+<div class="ians-column">
+  <h2>Grids</h2>
+  <p>
+					Basic Grids help layout groups of content in a way that adapts to
+					screen sizes.
+				</p>
+</div>
+
+<div class="ians-column-wide-4 ians-grid-2">
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-2 item 1</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-2 item 2</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-4 ians-grid-3">
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-3 item 1</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-3 item 2</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-3 item 3</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-4 ians-grid-4">
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-4 item 1</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-4 item 2</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-4 item 3</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-4 item 4</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-4 ians-grid-5">
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-5 item 1</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-5 item 2</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-5 item 3</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-5 item 4</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-5 item 5</code>
+  </p>
+</div>
+
+<div class="ians-column">
+  <h2>Video</h2>
+  <p>
+    <code>{&#37; vimeo "vimeo-id" &#37;}</code>
+  </p>
+</div>
+<div class="ians-column-wide-2">{% vimeo %}</div>
