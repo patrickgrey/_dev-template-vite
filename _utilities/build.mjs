@@ -3,7 +3,7 @@ import glob from "fast-glob";
 import { sassPlugin } from "esbuild-sass-plugin";
 
 (async () => {
-  let entryPointsJS = await glob(`website-publish/**/*.js`, { ignore: ['website-publish/_data/**/*.js'] });
+  let entryPointsJS = await glob(`website-publish/**/*.js`);
   let entryPointsCSS = await glob(`website-publish/**/*.css`);
   let entryPointsSCSS = await glob(`website-publish/**/*.scss`);
   let entryPoints = [...entryPointsJS, ...entryPointsCSS, ...entryPointsSCSS];

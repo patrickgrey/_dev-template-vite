@@ -8,8 +8,9 @@
     "dev": "run-s del serve",
     "build:11ty": "cross-env DEV_ENVIRONMENT=prod npx @11ty/eleventy",
     "build:esbuild": "node _utilities/build.mjs",
+    "build:zip": "node _utilities/zip-it-and-ship-it.mjs",
     "build:http-server": "http-server website-publish -c-1",
-    "build": "run-s del build:11ty build:esbuild build:http-server",
+    "build": "run-s del build:11ty build:esbuild build:zip ",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
     "debug": "DEBUG=* npx @11ty/eleventy"
@@ -32,6 +33,7 @@
     "@11ty/eleventy": "^2.0.0-canary.16",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-vite": "^2.0.0-canary.2",
+    "archiver": "^5.3.1",
     "clean-css": "^5.3.1",
     "cross-env": "^7.0.3",
     "del-cli": "^5.0.0",
