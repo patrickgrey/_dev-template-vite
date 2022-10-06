@@ -38,6 +38,11 @@
   --ians-colour-light-blue: #2990ea;
   --ians-colour-dark-blue: #003366;
   --ians-colour-light-grey: #efefef;
+  --ians-colour-dark-highlight: gold;
+
+  --ians-colour-light-blue-rgb: 41, 144, 234;
+  --ians-colour-dark-blue-rgb: 0, 51, 102;
+  --ians-colour-light-grey-rgb: 239, 239, 239;
 
   --ians-grid-gaps: 1rem;
   --ians-size-sides-small: 0.5rem;
@@ -278,6 +283,13 @@ select {
   width: 1px;
 }
 
+.ians-dark-bold-highlight {
+  background-color: var(--ians-colour-dark-highlight);
+  color: var(--ians-colour-dark-blue);
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+}
+
 .ians-dev-notes {
   background-color: yellow;
   border-radius: 3px;
@@ -492,13 +504,18 @@ blockquote {
   background: var(--ians-colour-dark-blue);
 }
 
+.ians-bg-dark-blue *::selection {
+  color: var(--ians-colour-dark-blue);
+  background: white;
+}
+
 footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   min-height: var(--ians-footer-height);
-  /* padding: var(--size-200) var(--size-50); */
+  margin-top: 3rem;
   color: white;
   background-color: #0f1120;
 }
@@ -533,6 +550,10 @@ footer {
   color: var(--ians-colour-light-grey);
 }
 
+.ians-text-pop {
+  text-shadow: 1px 1px black;
+}
+
 /* BG */
 
 .ians-bg-light-blue {
@@ -545,6 +566,16 @@ footer {
 
 .ians-bg-light-grey {
   background-color: var(--ians-colour-light-grey);
+}
+
+.ians-bg-light-blue-glass {
+  background-color: rgba(var(--ians-colour-light-blue-rgb), 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.ians-bg-dark-blue-glass {
+  background-color: rgba(var(--ians-colour-dark-blue-rgb), 0.6);
+  backdrop-filter: blur(10px);
 }
 
 /* 
@@ -655,6 +686,7 @@ div[class^="ians-video"] embed {
   background-color: var(--ians-colour-light-blue);
   height: var(--ians-lms-banner-height);
   overflow: hidden;
+  z-index: 1000;
 }
 
 .ians-lms-banner a {
@@ -664,6 +696,14 @@ div[class^="ians-video"] embed {
   color: white;
   font-weight: bold;
   padding-left: 2rem;
+}
+
+.ians-grid-no-col-gap {
+  grid-column-gap: 0 !important;
+}
+
+.ians-grid-no-row-gap {
+  grid-row-gap: 0 !important;
 }
 
 /*  
@@ -834,4 +874,30 @@ div[class^="ians-video"] embed {
   object-position: center;
   width: 100%;
   height: 50vmin;
+}
+
+.ians-card img {
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 20vmin;
+}
+
+.ians-card-over {
+  position: relative;
+}
+
+.ians-card-over img {
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 30vmin;
+}
+
+.ians-card-over > div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

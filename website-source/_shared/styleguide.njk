@@ -59,14 +59,45 @@ cssFiles:
 
   <div class="ians-grid-3">
     <p class="p-1 ians-text-white ians-bg-light-blue">
-      <code>--ians-colour-light-blue</code>
+      <code>.ians-bg-light-blue</code>
     </p>
     <p class="p-1 ians-text-white ians-bg-dark-blue">
-      <code>--ians-colour-dark-blue</code>
+      <code>.ians-bg-dark-blue</code>
     </p>
     <p class="p-1 ians-bg-light-grey">
-      <code>--ians-colour-light-grey</code>
+      <code>.ians-bg-light-grey</code>
     </p>
+  </div>
+
+  <div class="ians-column-wide-3 ians-grid-3">
+
+    <div class="ians-card-over">
+      <img src="../tree.jpg" alt="Hero image of desert tree">
+      <div class="ians-bg-light-blue-glass">
+        <p class="m-0 p-1 ians-text-white ians-text-pop">
+          <code>.ians-bg-light-blue-glass</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="ians-card-over">
+      <img src="../tree.jpg" alt="Hero image of desert tree">
+      <div class="ians-bg-dark-blue-glass">
+        <p class="m-0 p-1 ians-text-white ians-text-pop">
+          <code>.ians-bg-dark-blue-glass</code>
+        </p>
+      </div>
+    </div>
+
+    <div class="ians-card-over">
+      <img src="../tree.jpg" alt="Hero image of desert tree">
+      <div class="ians-bg-light-blue-glass">
+        <p class="m-0 p-1 ians-text-white ians-text-pop">
+          <code>.ians-bg-light-blue-glass</code>
+        </p>
+      </div>
+    </div>
+
   </div>
 
 </div>
@@ -111,7 +142,9 @@ cssFiles:
     <p>This is a double column layout: <code>.ians-column-double</code>
     </p>
     <p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+							Lorem <strong class="ians-dark-bold-highlight">
+        <code>.ians-dark-bold-highlight</code>
+      </strong>&nbsp; ipsum dolor sit amet consectetur adipisicing elit. Ex
 							voluptas officiis quisquam sapiente accusantium cumque, unde
 							doloribus ipsam numquam quod natus id veritatis sed porro esse
 							repellat ut facilis. Omnis!
@@ -196,10 +229,105 @@ cssFiles:
   </p>
 </div>
 
+<div class="ians-column-wide-4 ians-grid-4 ians-grid-no-col-gap mb-2">
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-no-col-gap item 1</code>
+  </p>
+  <p class="ians-bg-dark-blue ians-text-white p-1">
+    <code>.ians-grid-no-col-gap item 2</code>
+  </p>
+
+  <p class="ians-bg-light-blue ians-text-white p-1">
+    <code>.ians-grid-no-col-gap item 3</code>
+  </p>
+  <p class="ians-bg-dark-blue ians-text-white p-1">
+    <code>.ians-grid-no-col-gap item 4</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-4 ians-grid-4 ians-grid-no-row-gap">
+  <p class="ians-bg-light-blue ians-text-white p-1 m-0">
+    <code>.ians-grid-no-row-gap item 1</code>
+  </p>
+  <p class="ians-bg-dark-blue ians-text-white p-1 m-0">
+    <code>.ians-grid-no-row-gap item 2</code>
+  </p>
+  <p class="ians-bg-light-blue ians-text-white p-1 m-0">
+    <code>.ians-grid-no-row-gap item 3</code>
+  </p>
+  <p class="ians-bg-dark-blue ians-text-white p-1 m-0">
+    <code>.ians-grid-no-row-gap item 4</code>
+  </p>
+</div>
+
 <div class="ians-column">
   <h2>Video</h2>
   <p>
     <code>{&#37; vimeo "vimeo-id" &#37;}</code>
   </p>
 </div>
+
 <div class="ians-column-wide-2">{% vimeo %}</div>
+
+<div class="ians-column">
+  <h2>Cards</h2>
+  <p>
+    <code>.ians-card</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-3 ians-grid-3">
+
+  <div class="ians-card">
+    <img src="../tree.jpg" alt="Hero image of desert tree">
+    <div class="ians-bg-light-blue">
+      <p class="m-0 p-1 ians-text-white">This is the card text</p>
+    </div>
+  </div>
+
+  <div class="ians-card">
+    <img src="../tree.jpg" alt="Hero image of desert tree">
+    <div class="ians-bg-dark-blue">
+      <p class="m-0 p-1 ians-text-white">This is the card text</p>
+    </div>
+  </div>
+
+  <div class="ians-card">
+    <img src="../tree.jpg" alt="Hero image of desert tree">
+    <div class="ians-bg-light-blue">
+      <p class="m-0 p-1 ians-text-white">This is the card text</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="ians-column">
+  <p>
+    <code>.ians-card-over</code>
+  </p>
+</div>
+
+<div class="ians-column-wide-3 ians-grid-3">
+
+  <div class="ians-card-over">
+    <img src="../tree.jpg" alt="Hero image of desert tree">
+    <div class="ians-bg-light-blue-glass">
+      <p class="m-0 p-1 ians-text-white ians-text-pop">This is the card text</p>
+    </div>
+  </div>
+
+  <div class="ians-card-over">
+    <img src="../tree.jpg" alt="Hero image of desert tree">
+    <div class="ians-bg-dark-blue-glass">
+      <p class="m-0 p-1 ians-text-white ians-text-pop">This is the card text</p>
+    </div>
+  </div>
+
+  <div class="ians-card-over">
+    <img src="../tree.jpg" alt="Hero image of desert tree">
+    <div class="ians-bg-light-blue-glass">
+      <p class="m-0 p-1 ians-text-white ians-text-pop">This is the card text</p>
+    </div>
+  </div>
+
+</div>
