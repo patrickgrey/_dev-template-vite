@@ -261,13 +261,23 @@ cssFiles:
 </div>
 
 <div class="ians-column">
-  <h2>Video</h2>
+  <h2>Video shortcode</h2>
   <p>
     <code>{&#37; vimeo "vimeo-id" &#37;}</code>
   </p>
 </div>
 
 <div class="ians-column-wide-2">{% vimeo %}</div>
+
+<div class="ians-column">
+  <h2>Image shortcode</h2>
+  <p>
+    <code>{&#37; image "filepath", "alt text", "add class" &#37;}</code>
+  </p>
+  {% image "../tree.jpg",
+  "alt",
+  "mb-2" %}
+</div>
 
 <div class="ians-column">
   <h2>Cards</h2>
