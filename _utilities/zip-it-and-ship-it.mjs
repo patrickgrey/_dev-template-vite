@@ -15,6 +15,8 @@ const filteredTree = dirTree(source, {
   attributes: ['extension']
 });
 
+console.log("filteredTree: ", filteredTree);
+
 const traverse = function (o, fn, scope = []) {
   for (let i in o) {
     fn.apply(this, [i, o[i], scope]);
@@ -60,10 +62,14 @@ traverse(filteredTree, (key, value, scope) => {
   }
 });
 
+
 pathArray.splice(pathArray.indexOf(`${source}\\_web-page-template`), 1);
 pathArray.splice(pathArray.indexOf(`${source}\\index.html`), 1);
+console.log("pathArray: ", pathArray);
 
 function zipIt(folder, zipName) {
+  console.log("folder: ", folder);
+  console.log("zipName: ", zipName);
   const output = fs.createWriteStream(folder + "/" + zipName);
   const archive = archiver('zip');
   archive.on('warning', function (err) {
@@ -84,7 +90,7 @@ function zipIt(folder, zipName) {
   archive.finalize();
 }
 
-// console.log("pathArray: ", pathArray);
+console.log("pathArray: ", pathArray);
 
 let pathTracker = [];
 
