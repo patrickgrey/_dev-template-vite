@@ -44,7 +44,11 @@ breadcrumb: []
             {% endfor %}
           </p>
         {% endif %}
-        <h1>{{ title }}</h1>
+        {% if breadcrumb != '' %}
+          <h1>{{ title }}</h1>
+        {% else %}
+          <h1 class="mt-3">{{ title }}</h1>
+        {% endif %}
       </header>
       <main>
         {{ content | safe }}
