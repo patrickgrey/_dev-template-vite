@@ -10,7 +10,7 @@
     "build:esbuild": "node _utilities/build.mjs",
     "build:zip": "node _utilities/zip-it-and-ship-it.mjs",
     "build:http-server": "http-server website-publish -c-1",
-    "build": "run-s del build:11ty build:esbuild build:zip ",
+    "build": "run-s del build:11ty build:esbuild build:zip build:http-server",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
     "debug": "DEBUG=* npx @11ty/eleventy"

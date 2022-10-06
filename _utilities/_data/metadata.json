@@ -1,21 +1,112 @@
 {
-  "title": "Your Blog Name",
-  "url": "https://example.com/",
-  "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
-  "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
-    "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://example.com/"
-  },
-  "jsonfeed": {
-    "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
-  },
-  "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com",
-    "url": "https://example.com/about-me/"
-  }
+  "courseCode": "APT-ACDM",
+  "courseTitle": "Demo of 2022 course template",
+  "dataAccessType": "nolms",
+  "dataCourseMode": "e-Learning Course",
+  "dataCourseProvider": "TRG",
+  "syllabusImageURL": "https://trainingzone.eurocontrol.int/clix/data/course/NMO_ATFCM_INTRO_E_650_5784993.jpg",
+  "syllabusHasRegisterButton": true,
+  "syllabusContent": [
+    {
+      "type": "WBT",
+      "title": "Top level media item",
+      "link": "placeholder.html",
+      "depth": 0
+    },
+    {
+      "type": "WBT",
+      "title": "Top level media item with long title. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas placerat, enim lacinia dapibus vehicula, urna mi interdum dolor, quis fermentum dui elit nec nisi.",
+      "link": "placeholder.html",
+      "depth": 0
+    },
+    {
+      "type": "WBT",
+      "title": "Title for topic not available in direct access",
+      "depth": 0
+    },
+    {
+      "type": "FOLDER",
+      "title": "Level 1 folder title",
+      "depth": 0
+    },
+    {
+      "type": "WBT",
+      "title": "Media item in a folder",
+      "link": "placeholder.html",
+      "depth": 1
+    },
+    {
+      "type": "FOLDER",
+      "title": "Level 2 folder title",
+      "depth": 1
+    },
+    {
+      "type": "WBT",
+      "title": "Media item in a level 2 folder",
+      "link": "placeholder.html",
+      "depth": 2
+    },
+    {
+      "type": "WBT",
+      "title": "Media item in a level 2 folder",
+      "depth": 2
+    },
+    {
+      "type": "FOLDER",
+      "title": "Level 3 folder title",
+      "depth": 2
+    },
+    {
+      "type": "WBT",
+      "title": "Media item in a level 3 folder",
+      "link": "placeholder.html",
+      "depth": 3
+    },
+    {
+      "type": "WBT",
+      "title": "Media item in a level 3 folder",
+      "depth": 3
+    },
+    {
+      "type": "WBT",
+      "title": "Media item in a folder",
+      "link": "placeholder.html",
+      "depth": 1
+    },
+    {
+      "type": "FOLDER",
+      "title": "Media types",
+      "depth": 0
+    },
+    {
+      "type": "VIDEO",
+      "title": "Video item in a folder",
+      "link": "placeholder.html",
+      "depth": 1
+    },
+    {
+      "type": "LINK",
+      "title": "Link in a folder",
+      "link": "placeholder.html",
+      "depth": 1
+    },
+    {
+      "type": "TEST",
+      "title": "Test item in a folder",
+      "link": "placeholder.html",
+      "depth": 1
+    },
+    {
+      "type": "FILE",
+      "title": "File link in a folder",
+      "link": "placeholder.html",
+      "depth": 1
+    },
+    {
+      "type": "WBT",
+      "title": "Top level media item",
+      "link": "placeholder.html",
+      "depth": 0
+    }
+  ]
 }

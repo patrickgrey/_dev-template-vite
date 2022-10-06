@@ -401,6 +401,10 @@ h4 {
   font-size: var(--step-1);
 }
 
+iframe {
+  display: block;
+}
+
 p,
 li {
   max-width: var(--column-max-width);

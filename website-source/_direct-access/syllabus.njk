@@ -1,0 +1,113 @@
+---
+permalink: "_direct-access/{{metadata.courseCode}}_syllabus.html"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ metadata.courseTitle }} syllabus</title>
+    {% set css %}
+    {% include "../_shared/css/guide.css" %}
+    {% include "../_shared/css/shared.css" %}
+    {% endset %}
+
+    {% if devEnvironment.environment === 'dev' %}
+      <link rel="stylesheet" href="/_shared/css/guide.css">
+      <link rel="stylesheet" href="/_shared/css/shared.css">
+    {% else %}
+      <style>
+        {{css | cssmin | safe}}
+      </style>
+    {% endif %}
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+
+  <body>
+    <header class="ians-welcome-page-title"
+    style="background-image: linear-gradient( 
+        45deg
+        , rgba(0, 51, 102, 1) 0%, rgba(0, 51, 102, 0.5) 100% ),url({{ metadata.syllabusImageURL }}); text-shadow: 1px 1px 0 black; min-height: 45vh;">
+      <div class="ians-column-wide-1  ians-grid-spaced">
+        <h1>{{ metadata.courseTitle }}</h1>
+      </div>
+    </header>
+
+    <main class="ians-column">
+      <!-- <p>Sticky with folder names?</p> -->
+      {% if metadata.syllabusHasRegisterButton %}
+        <!-- Registration button - remove if not necessary -->
+        <div class="course-registration">
+          <!-- set the correct module code at the end of the URL below -->
+          <a class="course-registration-button"
+        href="/CourseRequest-catalogue.asp?coursecode={{metadata.courseCode}}">Register
+        now to get the certificate</a>
+        </div>
+      {% endif %}
+      <div class="ians-syllabus">
+        <!-- Syllabus -->
+        <ul>
+          {% set currentDepth = 0 %}
+          {% for item in metadata.syllabusContent %}
+            <li>
+
+              {% if item.depth > currentDepth %}
+
+                {% for i in range(0, item.depth - currentDepth) -%}
+                  <ul>
+                    <li>
+                    {%- endfor %}
+
+                  {% elseif item.depth < currentDepth %}
+
+                    {% for i in range(0, currentDepth - item.depth) -%}
+                  </ul>
+                </li>
+              {%- endfor %}
+
+            {% endif %}
+
+            {% set currentDepth = item.depth %}
+
+            {% if item.type === "FOLDER" %}
+              <h{{ item.depth + 2 }}>{{ item.title }}</h{{ item.depth + 2 }}>
+            {% else %}
+              {% if item.link %}
+                <a href="/ilp/customs/Reports/AdminFunctions/Execute/Goto/{{ item.link }}"
+          class="ians-icon ians-icon-{{ item.type | lower }}">
+                  {{ item.title }}
+                </a>
+              {% else %}
+                <p class="ians-icon ians-icon-{{ item.type | lower }} ians-unavailable">
+                  {{ item.title }}
+                </p>
+              {% endif %}
+            {% endif %}
+          </li>
+
+        {% endfor %}
+      </ul>
+
+    </div>
+    {% if metadata.syllabusHasRegisterButton %}
+      <!-- Registration button - remove if not necessary -->
+      <div class="course-registration">
+        <!-- set the correct module code at the end of the URL below -->
+        <a class="course-registration-button"
+        href="/CourseRequest-catalogue.asp?coursecode={{metadata.courseCode}}">Register
+        now to get the certificate</a>
+      </div>
+    {% endif %}
+  </main>
+  <footer>
+    <p>&copy; EUROCONTROL</p>
+  </footer>
+
+  <script src="syllabus.js"></script>
+
+</body>
+
+</html>

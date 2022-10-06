@@ -1,0 +1,174 @@
+html,
+body {
+  height: 100%;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+iframe {
+  height: calc(100% - 54px);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ians-lms-banner a {
+  position: absolute;
+  display: inline-block;
+  line-height: 54px;
+  height: 54px;
+  color: white;
+  font-weight: bold;
+  left: -12rem;
+  transition: left 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.ians-lms-banner a.ians-lms-banner-show {
+  left: 2rem;
+  padding-right: 2rem;
+}
+
+.ians-lms-banner a:hover {
+  background-color: #2990ea;
+}
+
+.course-registration {
+  text-align: center;
+}
+
+.course-registration-button {
+  display: inline-block;
+  margin: 0 auto;
+  text-decoration: none;
+  padding: var(--size-50) var(--size-75);
+  color: var(--ians-colour-light-blue);
+  border: 1px solid var(--ians-colour-light-blue);
+  border-radius: 3px;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+.course-registration-button:hover {
+  background-color: var(--ians-colour-light-blue);
+  color: white;
+}
+
+.ians-syllabus {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.ians-syllabus ul a,
+.ians-syllabus .ians-unavailable {
+  position: relative;
+  display: block;
+  padding: 1.25rem 5rem 1.25rem 2rem;
+  text-decoration: none;
+  font-weight: 400;
+  /* border: 1px solid #999; */
+  background-color: #eee;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12);
+}
+
+.ians-syllabus .ians-unavailable {
+  margin-top: 0;
+  color: #999;
+}
+
+.ians-syllabus .ians-unavailable:hover {
+  cursor: not-allowed;
+}
+
+.ians-syllabus ul a:hover {
+  background-color: #ccc;
+  color: #036;
+}
+
+.ians-syllabus h2,
+.ians-syllabus h3,
+.ians-syllabus h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #036;
+}
+
+.ians-icon::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  right: 0.5rem;
+  /* background-color: red; */
+  height: 3rem;
+  width: 3rem;
+}
+
+.ians-icon-wbt::after {
+  background-image: url(icons/wbt.svg);
+}
+
+.ians-icon-video::after {
+  background-image: url(icons/video.svg);
+}
+
+.ians-icon-link::after {
+  background-image: url(icons/link.svg);
+}
+
+.ians-icon-test::after {
+  background-image: url(icons/test.svg);
+}
+
+.ians-icon-file::after {
+  background-image: url(icons/file.svg);
+}
+
+.ians-icon-wbt.ians-unavailable::after,
+.ians-icon-video.ians-unavailable::after,
+.ians-icon-link.ians-unavailable::after,
+.ians-icon-test.ians-unavailable::after,
+.ians-icon-file.ians-unavailable::after {
+  filter: grayscale(100%);
+}
+
+/* Depth 1 */
+.ians-syllabus ul li > ul {
+  background-color: #036;
+  width: 95%;
+  margin-left: 5%;
+  /* color: white; */
+  padding: 1rem 1rem 0.1rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+.ians-syllabus h3 {
+  color: white;
+}
+
+/* Depth 2 */
+.ians-syllabus ul li > ul li > ul {
+  background-color: #2990ea;
+  margin-bottom: 2rem;
+}
+
+/* Depth 3 */
+.ians-syllabus ul li > ul li > ul li > ul {
+  background-color: #036;
+  color: 1rem;
+}
+
+.ians-welcome-page-title {
+  margin-bottom: 3rem;
+}
+
+.ians-lms-banner {
+  background-color: #036;
+}

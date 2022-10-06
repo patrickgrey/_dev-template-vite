@@ -11,6 +11,7 @@ import { sassPlugin } from "esbuild-sass-plugin";
     allowOverwrite: true,
     bundle: true,
     entryPoints,
+    external: ["*.jpg", "*.jpeg", "*.png", "*.svg", "*.webp", "*.avif", "*.gif"],
     sourcemap: true,
     minify: true,
     nodePaths: [`website-publish/shared`],
