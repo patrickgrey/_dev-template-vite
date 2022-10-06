@@ -95,6 +95,7 @@ console.log("pathArray: ", pathArray);
 let pathTracker = [];
 
 const zipArray = pathArray.map(async (item) => {
+  console.log(item);
   const splitPath = item.split("\\");
   // Remove index page
   splitPath.pop();
