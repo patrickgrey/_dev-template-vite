@@ -100,7 +100,9 @@ const zipArray = pathArray.map(async (item) => {
   splitPath.pop();
 
   const folderPath = "./" + splitPath.join("/");
+  console.log("folderPath: ", folderPath);
   const zipName = `${splitPath[splitPath.length - 1]}.zip`;
+  console.log("zipName: ", zipName);
   if (!pathTracker.includes(folderPath)) {
     zipIt(folderPath, zipName);
     pathTracker.push(folderPath);
