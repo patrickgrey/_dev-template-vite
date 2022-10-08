@@ -65,11 +65,11 @@ traverse(filteredTree, (key, value, scope) => {
 
 pathArray.splice(pathArray.indexOf(`${source}\\_web-page-template`), 1);
 pathArray.splice(pathArray.indexOf(`${source}\\index.html`), 1);
-console.log("pathArray: ", pathArray);
+// console.log("pathArray: ", pathArray);
 
 function zipIt(folder, zipName) {
-  console.log("folder: ", folder);
-  console.log("zipName: ", zipName);
+  // console.log("folder: ", folder);
+  // console.log("zipName: ", zipName);
   const output = fs.createWriteStream(folder + "/" + zipName);
   const archive = archiver('zip');
   archive.on('warning', function (err) {
@@ -90,21 +90,23 @@ function zipIt(folder, zipName) {
   archive.finalize();
 }
 
-console.log("pathArray: ", pathArray);
+// console.log("pathArray: ", pathArray);
 
 let pathTracker = [];
 
 const zipArray = pathArray.map(async (item) => {
   console.log("item: ", item);
+  const normalizedPath = path.normalize(item);
+  console.log("normalizedPath: ", normalizedPath);
   const splitPath = item.split("\\");
   // Remove index page
   splitPath.pop();
-  console.log("splitPath: ", splitPath);
+  // console.log("splitPath: ", splitPath);
 
   const folderPath = "./" + splitPath.join("/");
-  console.log("folderPath: ", folderPath);
+  // console.log("folderPath: ", folderPath);
   const zipName = `${splitPath[splitPath.length - 1]}.zip`;
-  console.log("zipName: ", zipName);
+  // console.log("zipName: ", zipName);
   if (!pathTracker.includes(folderPath)) {
     zipIt(folderPath, zipName);
     pathTracker.push(folderPath);
