@@ -92,20 +92,26 @@ function zipIt(folder, zipName) {
 
 // console.log("pathArray: ", pathArray);
 
+function isWindows(pathURL) {
+  return pathURL.includes("\\\\")
+}
+
 let pathTracker = [];
 
 const zipArray = pathArray.map(async (item) => {
+  console.log("\\\\");
   // console.log("item: ", item);
-  const normalizedPath = path.normalize(item);
-  const macFix = normalizedPath.replaceAll("/", "\\");
-  console.log("macFix: ", macFix);
-  const splitPath = macFix.split("\\");
+  // const normalizedPath = path.normalize(item);
+  // const macFix = normalizedPath.replaceAll("/", "\\");
+  // console.log("macFix: ", macFix);
+  const splitPath = isWindows() ? path.split("\\\\") : path.split("/");
   // Remove index page
   splitPath.pop();
   console.log("splitPath: ", splitPath);
 
-  const folderPath = "./" + splitPath.join("/");
-  // console.log("folderPath: ", folderPath);
+  // const folderPath = "./" + splitPath.join("/");
+  const folderPath = isWindows() ? splitPath.join("\\") : splitPath.join("/")
+  console.log("folderPath: ", folderPath);
   const zipName = `${splitPath[splitPath.length - 1]}.zip`;
   // console.log("zipName: ", zipName);
   if (!pathTracker.includes(folderPath)) {
