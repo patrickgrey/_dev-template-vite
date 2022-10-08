@@ -95,13 +95,13 @@ function zipIt(folder, zipName) {
 let pathTracker = [];
 
 const zipArray = pathArray.map(async (item) => {
-  console.log("item: ", item);
+  // console.log("item: ", item);
   const normalizedPath = path.normalize(item);
-  console.log("normalizedPath: ", normalizedPath);
+  // console.log("normalizedPath: ", normalizedPath);
   const splitPath = item.replace("/", "\\").split("\\");
   // Remove index page
   splitPath.pop();
-  // console.log("splitPath: ", splitPath);
+  console.log("splitPath: ", splitPath);
 
   const folderPath = "./" + splitPath.join("/");
   // console.log("folderPath: ", folderPath);
