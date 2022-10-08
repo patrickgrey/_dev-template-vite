@@ -95,10 +95,11 @@ console.log("pathArray: ", pathArray);
 let pathTracker = [];
 
 const zipArray = pathArray.map(async (item) => {
-  console.log(item);
+  console.log("item: ", item);
   const splitPath = item.split("\\");
   // Remove index page
   splitPath.pop();
+  console.log("splitPath: ", splitPath);
 
   const folderPath = "./" + splitPath.join("/");
   console.log("folderPath: ", folderPath);
