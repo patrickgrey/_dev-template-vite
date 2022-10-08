@@ -97,8 +97,9 @@ let pathTracker = [];
 const zipArray = pathArray.map(async (item) => {
   // console.log("item: ", item);
   const normalizedPath = path.normalize(item);
-  // console.log("normalizedPath: ", normalizedPath);
-  const splitPath = normalizedPath.replace("/", "\\").split("\\");
+  const macFix = normalizedPath.replace("/", "\\");
+  console.log("macFix: ", macFix);
+  const splitPath = macFix.split("\\");
   // Remove index page
   splitPath.pop();
   console.log("splitPath: ", splitPath);
