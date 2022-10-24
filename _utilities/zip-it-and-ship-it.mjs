@@ -90,27 +90,28 @@ function zipIt(folder, zipName) {
   archive.finalize();
 }
 
-// console.log("pathArray: ", pathArray);
+// BUG: this breaks on build: return pathURL.includes("\\\\")
+// TypeError: Cannot read properties of undefined (reading 'includes')
 
 function isWindows(pathURL) {
-  return pathURL.includes("\\\\")
+  return pathURL.includes("\\");
 }
 
 let pathTracker = [];
 
-const zipArray = pathArray.map(async (item) => {
-  console.log("\\\\");
-  // console.log("item: ", item);
+const zipArray = pathArray.map(async (path) => {
+  console.log("\\");
+  console.log("path: ", path);
   // const normalizedPath = path.normalize(item);
   // const macFix = normalizedPath.replaceAll("/", "\\");
   // console.log("macFix: ", macFix);
-  const splitPath = isWindows() ? path.split("\\\\") : path.split("/");
+  const splitPath = isWindows(path) ? path.split("\\") : path.split("/");
   // Remove index page
   splitPath.pop();
   console.log("splitPath: ", splitPath);
 
   // const folderPath = "./" + splitPath.join("/");
-  const folderPath = isWindows() ? splitPath.join("\\") : splitPath.join("/")
+  const folderPath = isWindows(path) ? splitPath.join("\\") : splitPath.join("/")
   console.log("folderPath: ", folderPath);
   const zipName = `${splitPath[splitPath.length - 1]}.zip`;
   // console.log("zipName: ", zipName);
