@@ -1,7 +1,7 @@
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const Image = require("@11ty/eleventy-img");
 const CleanCSS = require("clean-css");
-const UglifyJS = require("uglify-js");
+const { minify } = require("terser");
 const path = require("path");
 
 async function imageShortcode(src, alt, cls, sizes, widths, formats) {
@@ -57,11 +57,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
-  eleventyConfig.addFilter("jsmin", function (code) {
-    return new UglifyJS.minify(code);
+  eleventyConfig.addFilter("jsmin", async function (code) {
+    const minifiedObject = await minify(code);
+    return minifiedObject.code;
   });
-
-
   // Change links to sass files in template to css on build
   eleventyConfig.addFilter("sasstocss", function (code) {
     return (process.env.DEV_ENVIRONMENT != "dev") ? code.replace(".scss", ".css") : code;
