@@ -59,6 +59,20 @@ breadcrumb: []
 
     <footer>&copy; EUROCONTROL</footer>
 
+    {% set js %}
+    {% include "../../_shared/js/scrollToTop.js" %}
+    {% include "../../_shared/js/shared.js" %}
+    {% endset %}
+
+    {% if devEnvironment.environment === 'dev' %}
+      <script defer src="/_shared/js/scrollToTop.js"></script>
+      <script defer src="/_shared/js/shared.js"></script>
+    {% else %}
+      <script>
+        {{js | jsmin | safe}}
+      </script>
+    {% endif %}
+
     {% for file in jsFiles %}
       <script type="module" defer src="{{file}}"></script>
     {% endfor %}
