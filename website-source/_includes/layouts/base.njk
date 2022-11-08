@@ -73,6 +73,10 @@ breadcrumb: []
       </script>
     {% endif %}
 
+    {% for file in jsFilesExternal | reverse %}
+      <script defer src="{{file}}"></script>
+    {% endfor %}
+
     {% for file in jsFiles %}
       <script type="module" defer src="{{file}}"></script>
     {% endfor %}
