@@ -11,7 +11,7 @@ breadcrumb: []
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ title | safe }}</title>
     {% set css %}
     {% include "../../_shared/css/guide.css" %}
     {% include "../../_shared/css/shared.css" %}
@@ -40,12 +40,12 @@ breadcrumb: []
         {% if breadcrumb != '' %}
           <p class="ians-breadcrumb">
             {% for crumb in breadcrumb %}
-              {{ crumb }} / 
+              {{ crumb | safe }} / 
             {% endfor %}
           </p>
         {% endif %}
         {% if breadcrumb != '' %}
-          <h1>{{ title }}</h1>
+          <h1>{{ title | safe }}</h1>
         {% else %}
           <h1 class="mt-3">{{ title }}</h1>
         {% endif %}
