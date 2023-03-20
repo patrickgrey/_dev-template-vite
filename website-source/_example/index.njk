@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Examples of how to change the template
+jsFiles: ["./extra.js"]
+cssFiles: ["./styles-sass.scss"]
+breadcrumb: ["Subject 01", "Topic 01"]
+useDefaultHeader: false
+jsFilesExternal: ["https://code.jquery.com/jquery-3.6.4.min.js"]
+---
+<header class="ians-column-wide-1 mt-3 ians-bg-light-blue ians-text-white p-1">
+  <h1 class="ians-text-white">{{title}}</h1>
+  <p>This is a custom header as <code>useDefaultHeader: false</code>
+  </p>
+</header>
+
+<div class="ians-column mt-3">
+  <p>This page attempts to show you the features of this template.</p>
+
+  <h2>Layout</h2>
+  <p>Change <code>layout: layouts/base.njk</code> to use a different layout</p>
+
+  <h2>jsFiles</h2>
+  <p>To add more js links: <code>jsFiles: ["./extra.js", "./extra2.js"]</code>
+  </p>
+  <p>You can also use <code>import extra from "extra";</code>
+  </p>
+  <p>To have no JS file, remove any array <code>jsFiles:</code>
+  </p>
+
+  <h2>cssFiles</h2>
+  <p>This works as above. SCSS files can also be used.</p>
+
+  <h2>jsFilesExternal</h2>
+  <p>Use this to add external JS links such as <code>https://code.jquery.com/jquery-3.6.4.min.js</code>
+  </p>
+
+  <h2>Images</h2>
+  <p>Please use the image shortcode to ensure images are optimised. The source image should be very high quality and can be large in file size.</p>
+  {% image "images/sci-fi.jpg", "alt" %}
+
+  <h2>Translation</h2>
+  <p>Add a postfix to the filename e.g. <code>index.fr.njk</code> and this in your front matter: <code>permalink: "&#123;&#123; page.filePathStem 	&#125;&#125;.html"</code>
+  </p>
+
+  <h2>folders</h2>
+  <p>Use folders to organise your content e.g. if you need subjects and they will show up on the contents page. Note: personally I won't use these as it adds too many clicks during development. TODO: Hmmm, maybe adjust content page to accept subject headers instead...</p>
+</div>

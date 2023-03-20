@@ -42,6 +42,8 @@ traverse(filteredTree, (key, value, scope) => {
 let filteredPaths = pathArray.filter(function (path) {
   if (
     path === `website-source/_course-intro-template/index.njk` ||
+    path === `website-source/_example/index.njk` ||
+    path === `website-source/_example/index_fr.njk` ||
     path === `website-source/_web-page-template/index.njk` ||
     path === `website-source/_direct-access/index.njk` ||
     path === `website-source/_direct-access/syllabus.njk` ||
@@ -135,6 +137,7 @@ function parseData(data) {
   // Eh??
 
   contentsString += `<p><a href="_styleguide/">Styleguide</a></p>`;
+  contentsString += `<p><a href="_example/">Example</a></p>`;
 
   // contentsString += `<p class="ians-contents-level-root"><a href="_direct-access/${metaData.courseCode}_DA.html">Direct Access</a></p>`;
 
