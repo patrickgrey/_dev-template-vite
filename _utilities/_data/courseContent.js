@@ -73,7 +73,7 @@ const dataArray = filteredPaths.map((item) => {
     data.page = splitPath.pop() + "/" + filename;
   }
   else {
-    data.url = splitPath.join("/");
+    data.url = splitPath.join("/") + "/";
     data.page = splitPath.pop();
   }
   data.topics = [...splitPath];
