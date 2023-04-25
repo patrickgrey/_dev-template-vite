@@ -54,7 +54,9 @@ breadcrumb: []
         {{ content | safe }}
       </main>
     {% else %}
-      {{ content | safe }}
+      <main>
+        {{ content | safe }}
+      </main>
     {% endif %}
 
     <footer>&copy; EUROCONTROL</footer>
