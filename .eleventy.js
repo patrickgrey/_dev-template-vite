@@ -1,6 +1,6 @@
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const Image = require("@11ty/eleventy-img");
-const purgeCssPlugin = require("eleventy-plugin-purgecss");
+// const purgeCssPlugin = require("eleventy-plugin-purgecss");
 const CleanCSS = require("clean-css");
 const { minify } = require("terser");
 const path = require("path");
@@ -54,15 +54,16 @@ module.exports = function (eleventyConfig) {
     });
   }
 
-  if (process.env.DEV_ENVIRONMENT != "dev") {
-    eleventyConfig.addPlugin(purgeCssPlugin, {
-      // Optional: Specify the location of your PurgeCSS config
-      config: "./purgecss.config.js",
+  // REMOVED as cleared CSS used by JS
+  // if (process.env.DEV_ENVIRONMENT != "dev") {
+  //   eleventyConfig.addPlugin(purgeCssPlugin, {
+  //     // Optional: Specify the location of your PurgeCSS config
+  //     config: "./purgecss.config.js",
 
-      // Optional: Set quiet: true to suppress terminal output
-      quiet: false,
-    });
-  }
+  //     // Optional: Set quiet: true to suppress terminal output
+  //     quiet: false,
+  //   });
+  // }
 
   // Add filters
   eleventyConfig.addFilter("cssmin", function (code) {

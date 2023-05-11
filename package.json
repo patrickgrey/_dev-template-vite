@@ -38,7 +38,6 @@
     "cross-env": "^7.0.3",
     "del-cli": "^5.0.0",
     "directory-tree": "^3.5.1",
-    "eleventy-plugin-purgecss": "^0.3.0",
     "esbuild": "^0.17.12",
     "esbuild-sass-plugin": "^2.7.0",
     "fast-glob": "^3.2.12",
